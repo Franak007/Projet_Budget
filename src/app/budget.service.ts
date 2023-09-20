@@ -12,4 +12,8 @@ export class BudgetService {
   findAllBudgetLines(): BudgetLine[] {
     return BudgetLines;
   }
+
+  addToBudgetList(budgetLine: BudgetLine){
+    BudgetLines.push(budgetLine);
+  }
 }
