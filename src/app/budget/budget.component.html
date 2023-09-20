@@ -19,5 +19,32 @@
     </tr>
     </tbody>
   </table>
+  <br>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une opération</button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <input type="date" class="m-3" name="date" placeholder="Date" ngModel required><br>
+            <input type="text" class="m-3" name="label" placeholder="Intitulé" ngModel required><br>
+            <input type="number" class="m-3" name="amount" placeholder="Montant" ngModel required><br>
+            <select name="type" id="type-select" ngModel required>
+              <option value="">Choisissez votre type de dépense</option>
+              <option value="dépense">Dépense</option>
+              <option value="entrée">Entrée</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary m-3" data-bs-dismiss="modal">Enregistrer l'opération</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 

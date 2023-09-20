@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {BudgetComponent} from "./budget/budget.component";
 
 const routes: Routes = [
-  {path:'', component:BudgetComponent}
+  {path:'', component:BudgetComponent},
 ];
 
 @NgModule({
