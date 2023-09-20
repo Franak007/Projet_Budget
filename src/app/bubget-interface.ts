@@ -1,4 +1,4 @@
-export interface BubgetInterface {
+export interface BudgetLine {
     id: number,
     date: string,
     label: string,
