@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BudgetService} from "../budget.service";
 import {BudgetLine} from "../bubget-interface";
 import {BudgetLines} from "../mock-budget-list";
@@ -9,11 +9,16 @@ import {NgForm} from "@angular/forms";
   templateUrl: './budget.component.html',
   styleUrls: ['./budget.component.css']
 })
-export class BudgetComponent {
+export class BudgetComponent implements OnInit {
 
   budgetLinesList: BudgetLine[] = BudgetLines;
+  budgetLine: BudgetLine|undefined;
 
   constructor(private budget: BudgetService) {
+  }
+
+  ngOnInit() {
+    console.log(this.budgetLinesList);
   }
 
   onSubmit(form: NgForm){
@@ -31,4 +36,14 @@ export class BudgetComponent {
 
     return totalEntries - totalExpenses;
   }
+
+  getColor(index:number): string {
+    const type = this.budgetLinesList[index].type;
+    console.log(type);
+    if (type == "entrée") {
+      return 'lightgreen';
+    } else {
+      return 'palevioletred';
+    }
+      }
 }

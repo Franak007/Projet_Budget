@@ -15,11 +15,11 @@
       <th scope="col" class="text-center col-2">Dépense/Entrée</th>
     </tr>
     </thead>
-    <tbody *ngFor="let bugetLine of budgetLinesList">
+    <tbody *ngFor="let bugetLine of budgetLinesList; let index = index">
     <tr>
       <th scope="row" class="p-1">{{bugetLine.date}}</th>
-      <td class="p-1">{{bugetLine.label}}</td>
-      <td class="text-center">{{bugetLine.amount}} €</td>
+      <td class="p-1" >{{bugetLine.label}}</td>
+      <td class="text-center" [ngStyle]="{background: getColor(index)}">{{bugetLine.amount}} €</td>
       <td class="p-1">{{bugetLine.type}}</td>
     </tr>
     </tbody>
