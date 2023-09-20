@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {BudgetLine} from "./bubget-interface";
+import {BudgetLines} from "./mock-budget-list";
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,8 @@ import { Injectable } from '@angular/core';
 export class BudgetService {
 
   constructor() { }
+
+  findAllBudgetLines(): BudgetLine[] {
+    return BudgetLines;
+  }
 }

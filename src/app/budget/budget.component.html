@@ -1,1 +1,23 @@
-<p>budget works!</p>
+<h2 class="text-center">Mon budget : </h2>
+
+<div class="container">
+  <table class="table-bordered col-10">
+    <thead>
+    <tr>
+      <th scope="col" class="text-center col-2">Date</th>
+      <th scope="col" class="text-center col-5">Libellé</th>
+      <th scope="col" class="text-center col-2">Montant</th>
+      <th scope="col" class="text-center col-2">Dépense/Entrée</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let bugetLine of budgetLinesList">
+    <tr>
+      <th scope="row" class="p-1">{{bugetLine.date}}</th>
+      <td class="p-1">{{bugetLine.label}}</td>
+      <td class="text-center">{{bugetLine.amount}} €</td>
+      <td class="p-1">{{bugetLine.type}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
