@@ -1,4 +1,9 @@
-<h2 class="text-center">Mon budget : </h2>
+<h2 class="m-3">Mon budget : </h2>
+
+<div class="container">
+  <h4 class="m-2 text-center col-10">Solde actuel : {{accountBalance()}} €</h4>
+</div>
+
 <br>
 <div class="container">
   <table class="table-bordered col-10">
@@ -20,7 +25,9 @@
     </tbody>
   </table>
   <br>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une opération</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ajouter une
+    opération
+  </button>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
